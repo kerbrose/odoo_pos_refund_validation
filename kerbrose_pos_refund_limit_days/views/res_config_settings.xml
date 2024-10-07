@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_form_res_config_settings_return_day_limit" model="ir.ui.view">
+    <field name="name">view.form.res.config.settings.day.limit</field>
+    <field name="model">res.config.settings</field>
+    <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//block[@id='pos_payment_section']" position="inside">
+        <setting name="days_return" help="Set a maximum number of day for returns">
+          <field name="pos_limit_days_return" />
+          <div class="content-group mt16" invisible="not pos_limit_days_return">
+            <label for="pos_return_number_of_days" string="Number of days" class="fw-normal"/>
+            <field name="pos_return_number_of_days"/>
+          </div>
+        </setting>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>
